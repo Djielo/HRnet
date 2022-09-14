@@ -3,6 +3,9 @@
 # dependencies
 /node_modules
 /.pnp
+/src/reportWebVitals.js
+/src/setupTests.js
+/src/App.test.js
 .pnp.js
 
 # testing
