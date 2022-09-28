@@ -1,10 +1,103 @@
 body {
   margin: 0;
   font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  background-image: linear-gradient(-25deg, #768e12 0%, #ffffff 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.modal-btn {
+  width: 50%;
+  max-width: 360px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #556611;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #768e12;
+  }
+
+  &:active {
+    background-color: #556611;
+  }
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(49, 49, 49, 0.631);
+  }
+
+  .modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    max-width: 300px;
+    height: max-content;
+    min-height: 6rem;
+    font-weight: bold;
+    padding: 0 2rem;
+    border: #ccc solid 1px;
+    border-radius: 5px;
+    background-image: linear-gradient(-25deg, #768e12 0%, #ffffff 100%);
+    box-shadow: 0 0 5px 2px rgb(218, 201, 14);
+
+    .modal-image {
+      text-align: center;
+      width: 2rem;
+      height: 2rem;
+      padding: 0.5rem;
+    }
+
+    .modal-text {
+      text-align: center;
+    }
+
+    .modal-close {
+      padding: 0.3rem 0.5rem;
+      border: none;
+      border-radius: 5px;
+      position: absolute;
+      top: -0.8rem;
+      right: -0.8rem;
+      background-color: #556611;
+      color: #fff;
+      box-shadow: 0 0 5px 5px rgb(118, 142, 18);
+      cursor: pointer;
+    }
+  }
 }
 
 .title {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   text-align: center;
+
+  .logo_wealth_health {
+    width: 5rem;
+    height: 100%;
+    margin: 2rem 1rem 0 0;
+  }
 }
 
 .container {
@@ -14,86 +107,77 @@ body {
   justify-content: center;
 }
 
+.view_employee_list {
+  margin: 1rem;
+}
+
 .container-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 80%;
   max-width: 400px;
   padding: 20px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  margin: 20px;
-}
+  border-radius: 20px;
+  margin: 0.5rem 0 2rem 0;
+  background-image: linear-gradient(-225deg, #768e12 50%, #ffffff 50%);
 
-.form-group1-2 {
-  width: 80%;
-
-  .form-group1 {
-    input {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      box-sizing: border-box;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
+  .form-h2 {
+    margin: 0.5rem 0 1rem 0;
   }
 
-  .form-group2 {
-    .container-fieldset {
+  .form-group1-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    .form-group1,
+    .form-group2 {
+      margin-top: 0.5rem;
+      width: 100%;
+      max-width: 20rem;
+    }
+
+    .form-group2 {
       border: #ccc solid 1px;
       border-radius: 5px;
-      max-width: 400px;
-    }
 
-    input {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      box-sizing: border-box;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    select {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      box-sizing: border-box;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 0.5rem 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
     }
   }
-}
 
-#department {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
+  #department {
+    width: 100%;
+    max-width: 20rem;
+    padding: 12px 20px;
+    margin: 0.5rem 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
 
-label {
-  display: block;
+  label {
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
 }
 
 input {
   width: 100%;
-  max-width: 360px;
-  margin: 0 0 1rem 0;
-}
-
-.select-state {
-  margin: 0 0 1rem 0;
-}
-
-select {
-  margin: 1rem 0 1rem 0.5rem;
-}
-
-.address {
-  margin-top: 10px;
+  padding: 12px 20px;
+  margin: 0.5rem 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
