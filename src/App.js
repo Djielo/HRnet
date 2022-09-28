@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import Employee from "./pages/Employee";
 import Error from "./pages/Error";
 import { Provider } from "react-redux";
-import { store } from "./Redux/app/store";
+import { store } from "./redux/app/store";
 
 function App() {
   return (

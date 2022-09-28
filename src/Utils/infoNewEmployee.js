@@ -1,4 +1,4 @@
-import { updateEmployee, setModalMessage } from "../Redux/features/employeeSlice";
+import { updateEmployee, setModalMessage } from "../redux/features/employeeSlice";
 
 export const infoNewEmployee = (ref, modalMessage, dispatch) => {
   dispatch(setModalMessage(modalMessage));

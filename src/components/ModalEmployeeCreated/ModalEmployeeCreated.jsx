@@ -1,7 +1,7 @@
 import React from "react";
 import Wealth_Health_250 from "../../assets/Wealth_Health_250.png";
 import { useSelector,useDispatch} from "react-redux";
-import { setModalMessage } from "../../Redux/features/employeeSlice";
+import { setModalMessage } from "../../redux/features/employeeSlice";
 
 const ModalEmployeeCreated = () => {
 
