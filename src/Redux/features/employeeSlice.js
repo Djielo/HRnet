@@ -8,7 +8,7 @@ export const employeeSlice = createSlice({
   },
   reducers: {
     updateEmployee: (state, action) => {
-      state.list.push(action.payload);
+      state.list.push({ ...action.payload, key: new Date().getTime() });      
     },
     setModalMessage: (state, action) => {
       state.ModalMessage = action.payload;
