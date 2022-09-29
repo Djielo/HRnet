@@ -1,3 +1,5 @@
+// GENERAL
+
 body {
   margin: 0;
   font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -5,6 +7,8 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
+
+// MODAL
 
 .modal-btn {
   width: 50%;
@@ -87,6 +91,8 @@ body {
   }
 }
 
+// COMMUN
+
 .title {
   display: flex;
   justify-content: center;
@@ -107,9 +113,11 @@ body {
   justify-content: center;
 }
 
-.view_employee_list {
+.link_employee_list_home {
   margin: 1rem;
 }
+
+// FORM
 
 .container-form {
   display: flex;
@@ -180,4 +188,43 @@ input {
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+// TABLE
+
+table {
+  border: 1px solid #768e12;
+  // border-collapse: collapse;
+  width: 100%;
+  margin: 0 auto;
+  table-layout: fixed;
+}
+
+th,
+td {
+  text-align: -internal-center;
+  padding: 10px;
+}
+
+td {
+  border: 1px solid #768e12;
+  text-align: center;
+}
+
+.rc-table {
+  .rc-table-thead {
+    .rc-table-cell {
+      font-weight: normal;
+      background-color: #768e12;
+      color:#f5f5f5;
+    }
+  }
+
+  .rc-table-tbody {
+    .rc-table-row {
+      .rc-table-cell {
+        font-size: 1em;
+      }
+    }
+  }
 }
