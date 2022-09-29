@@ -1,0 +1,24 @@
+=> Problèmes à résoudre côté utilisateurs de HRnet (Plugins JQuery):
+	- Sélecteurs de date
+	- Fenêtres modales
+	- Menus déroulants
+	- Tableaux
+
+=> Problèmes causés par JQuery:
+	- trop d'appels réseaux
+	- trop de manipulation DOM
+
+OBJECTIF N°1
+===> Convertir l'un de ces plugins JQuery en React <===
+	- Créer un repos GitHub séparé pour le code converti
+	- documenter et commenter ce composant React
+===> Remplacer les 3 autres plugins par des composants React <===
+
+OBJECTIF N°2
+===> Convertir toute l'application HRnet en React <===
+	- avec composants fonctionnels et modulaires (pas de classe)
+	
+
+OBJECTIF N°3
+===> Test de performance Lighthouse (fournir les rapports)
+	- comparer l'ancienne et la nouvelle version

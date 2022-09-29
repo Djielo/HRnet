@@ -1,11 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/React-version/node_modules
+/node_modules
 /.pnp
-/src/reportWebVitals.js
-/src/setupTests.js
-/src/App.test.js
 .pnp.js
 
 # testing
@@ -24,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# ide files
+/.idea
