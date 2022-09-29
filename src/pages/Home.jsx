@@ -9,19 +9,19 @@ const Home = () => {
   const message = useSelector((state) => state.employee.ModalMessage);
 
   return (
-    <div>
+    <>
       <div className="title">
         <img className="logo_wealth_health" src={Wealth_Health_250} alt="Wealth Health Logo" />
         <h1>HRnet</h1>
       </div>
       <div className="container">
-        <Link className="view_employee_list" to="/employee">
+        <Link className="link_employee_list_home" to="/employee">
           View Current Employees
         </Link>
         <Formulary />
       </div>
       {message !== "" && <ModalEmployeeCreated />}
-    </div>
+    </>
   );
 };
 
