@@ -67,7 +67,7 @@ const Employee = () => {
       <div id="employee-div" className="container">
         <Link className="link_employee_list_home" to="/">
           Home
-        </Link>
+        </Link>        
         <Table columns={columns} data={mockedData} />
       </div>
     </>
