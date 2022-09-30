@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { infoNewEmployee } from "../../Utils/infoNewEmployee";
 import { stateSelectOptions } from "../../Utils/stateSelectOptions";
 import { useDispatch } from "react-redux";
+import MyDatePicker from "../MyDatePicker/MyDatePicker";
 
 const Formulary = () => {
   const formRef = useRef();
@@ -46,9 +47,9 @@ const Formulary = () => {
           <label htmlFor="last-name">Last Name</label>
           <input type="text" id="last-name" />
           <label htmlFor="date-of-birth">Date of Birth</label>
-          <input type="date" id="date-of-birth" />
+          <MyDatePicker id="date-of-birth" />
           <label htmlFor="start-date">Start Date</label>
-          <input type="date" id="start-date" />
+          <MyDatePicker id="start-date" />
         </div>
         <fieldset className="form-group2">
           <legend>Address</legend>

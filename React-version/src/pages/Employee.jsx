@@ -57,6 +57,7 @@ const Employee = () => {
   ];
 
   const data = useSelector((state) => state.employee.list);
+  console.log(data);
 
   return (
     <>
