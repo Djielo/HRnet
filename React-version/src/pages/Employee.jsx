@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import Table from "rc-table";
 import Wealth_Health_250 from "../assets/Wealth_Health_250.png";
 import { mockedData } from "../mockedData";
+import home from "../assets/home.svg";
 
 const Employee = () => {
   const columnWith = "max-content";
@@ -57,6 +58,7 @@ const Employee = () => {
   ];
 
   const data = useSelector((state) => state.employee.list);
+  console.log("data_employee", data);
 
   return (
     <>
@@ -66,10 +68,12 @@ const Employee = () => {
       </div>
       <div id="employee-div" className="container">
         <Link className="link_employee_list_home" to="/">
+          <img src={home} className="viewEmployees_home" alt="home" />
           Home
-        </Link>        
+        </Link>
         <Table columns={columns} data={mockedData} />
       </div>
+      
     </>
   );
 };
