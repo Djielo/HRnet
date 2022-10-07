@@ -72,7 +72,6 @@ const Formulary = () => {
         Department
         <Select classNamePrefix="react-select" id="department" options={departments} placeholder="Department" />
       </label>
-
       <button className="modal-btn">Save</button>
     </form>
   );

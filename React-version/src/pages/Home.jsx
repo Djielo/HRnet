@@ -18,7 +18,7 @@ const Home = () => {
       <div className="container">
         <Link className="link_employee_list_home" to="/employee">
           <img src={viewEmployees} className="viewEmployees_home" alt="view_employees"/>
-          View Current Employees
+          View Employees
         </Link>
         <Formulary />
       </div>
