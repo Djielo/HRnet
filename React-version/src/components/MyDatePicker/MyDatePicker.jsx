@@ -17,12 +17,14 @@ const getMonth = (date) => {
   return date.getMonth();
 };
 
-const MyDatePicker = () => {
-  const [startDate, setStartDate] = useState(new Date());
+const MyDatePicker = ({ id, placeholder }) => {
+  const [startDate, setStartDate] = useState("");
   const years = range(1900, getYear(new Date()) + 1, 1);
   const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   return (
     <DatePicker
+      id={id}
+      placeholderText={placeholder}
       autoComplete="off"
       renderCustomHeader={({
         date,
