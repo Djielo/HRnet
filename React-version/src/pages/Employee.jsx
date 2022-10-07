@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Table from "rc-table";
 import Wealth_Health_250 from "../assets/Wealth_Health_250.png";
-import { mockedData } from "../mockedData";
+// import { mockedData } from "../mockedData";
 import home from "../assets/home.svg";
 import columnsEmployees from "../Utils/columnsEmployees";
 
