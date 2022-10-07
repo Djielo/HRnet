@@ -75,10 +75,8 @@ const Formulary = () => {
           <input type="text" id="zip-code" placeholder="Zip Code" />
         </fieldset>
       </div>
-      <label htmlFor="department">
-        Department
-        <Select classNamePrefix="react-select" id="department" options={departments} placeholder="Department" />
-      </label>
+      <label htmlFor="department">Department</label>
+      <Select classNamePrefix="react-select" id="department" options={departments} placeholder="Department" />
       <button className="modal-btn">Save</button>
     </form>
   );
