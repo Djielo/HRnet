@@ -30,15 +30,17 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  margin: 0 auto;
+  width: 80vw;
 }
 
-.link_employee_list_home, .modal-btn {
+.link_employee_list_home,
+.modal-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 1rem;
-  padding: .4rem;
+  padding: 0.4rem;
   border-radius: 5px;
   text-decoration: none;
   background-color: $primary;
@@ -116,6 +118,20 @@ input {
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.search_paging {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  width: 98%;
+  .input_search {
+    max-width: 10rem;
+    padding: 12px;    
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
 }
 
 // MODAL
@@ -226,8 +242,6 @@ table {
   border: 1px solid $primary75;
   // border-collapse: collapse;
   width: 100%;
-  margin: 0 auto;
-  table-layout: fixed;
 }
 
 th,

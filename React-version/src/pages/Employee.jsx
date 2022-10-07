@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Table from "rc-table";
@@ -9,11 +9,6 @@ import columnsEmployees from "../Utils/columnsEmployees";
 
 const Employee = () => {
   const data = useSelector((state) => state.employee.list);
-  const inputValue = document.getElementById("input_search");
-  const [dataFiltered, setDataFiltered] = useState(data);
-  const handleChange=()=>{
-    setDataFiltered(dataFiltered.filter((item)=>item === inputValue))
-  }
 
   return (
     <>
@@ -27,10 +22,6 @@ const Employee = () => {
           Home
         </Link>
         <Table columns={columnsEmployees} data={data} />
-        <div className="search_paging">
-          <input type="search" className="input_search" id="input_search" onChange={handleChange} />
-          {/* <input type="search" className="input_search" name="" value="" /> */}
-        </div>
       </div>
     </>
   );
