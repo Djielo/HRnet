@@ -7,5 +7,7 @@ export const infoNewEmployee = (ref, modalMessage, dispatch) => {
   for (const input of ref) {
     data[input.id] = input.value;
   }
+  data.state = document.querySelector("#state .react-select__single-value").innerText;
+  data.department = document.querySelector("#department .react-select__single-value").innerText;
   dispatch(updateEmployee(data));
 };

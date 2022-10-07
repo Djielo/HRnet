@@ -13,20 +13,28 @@ const Formulary = () => {
     e.preventDefault();
     const message = defineMessage();
     infoNewEmployee(formRef.current, message, dispatch);
-    if (message.slice(0, 3) !== "you") formRef.current.reset();
+    if (message.slice(0, 3) !== "you") {
+      // remettre les champs à zéro
+      formRef.current.reset();
+      document.querySelector("#state .react-select__single-value").innerText = "";
+      document.querySelector("#department .react-select__single-value").innerText = "";
+      // remettre les champs myDatePicker à zéro
+      document.querySelector("#date-of-birth .react-datepicker__input-container").value = "";
+      document.querySelector("#start-date .react-datepicker__input-container").value = "";
+    }
   };
 
   function defineMessage() {
-    console.log(formRef.current[7]);
     if (isFilled(formRef.current[0].value)) return "you must fill your first name";
     if (isFilled(formRef.current[1].value)) return "you must fill your last name";
     if (isFilled(formRef.current[2].value)) return "you must select your Date of Birth";
     if (isFilled(formRef.current[3].value)) return "you must select the date you be employed";
     if (isFilled(formRef.current[5].value)) return "you must fill your Street Address";
     if (isFilled(formRef.current[6].value)) return "you must fill your City";
-    if (isFilled(document.querySelector(".css-qc6sy-singleValue").innerText)) return "you must select your State";
+    if (isFilled(document.querySelector("#state .react-select__single-value").innerText)) return "you must select your State";
     if (isFilled(formRef.current[8].value)) return "you must fill your Zip Code";
-    if (isFilled(document.querySelector(".css-6j8wv5-Input"))) return "you must select your working department";
+    if (isFilled(document.querySelector("#department .react-select__single-value").innerText))
+      return "you must select your working department";
     return `welcome ${formRef.current[0].value}, you are registred as new employee :)`;
   }
 
@@ -47,10 +55,9 @@ const Formulary = () => {
             Date of Birth
             <MyDatePicker id="date-of-birth" placeholder="Birthdate" />
           </label>
-
           <label htmlFor="start-date">
             Start Date
-            <MyDatePicker id="start-date" />
+            <MyDatePicker id="start-date" placeholder="Start Date" />
           </label>
         </div>
         <fieldset className="form-group2">
