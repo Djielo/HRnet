@@ -109,6 +109,10 @@ body {
     font-size: 1rem;
     font-weight: 600;
   }
+
+  label:last-of-type {
+    width: 100%;
+  }
 }
 
 input {
