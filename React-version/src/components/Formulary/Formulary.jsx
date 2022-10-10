@@ -9,18 +9,18 @@ import departments from "../../Utils/departments";
 const Formulary = () => {
   const formRef = useRef();
   const dispatch = useDispatch();
-  const handleSubmit = (e) => {
+  const handleSubmit = (e, placeholder) => {
     e.preventDefault();
     const message = defineMessage();
     infoNewEmployee(formRef.current, message, dispatch);
     if (message.slice(0, 3) !== "you") {
       // remettre les champs à zéro
       formRef.current.reset();
-      document.querySelector("#state .react-select__single-value").innerText = "";
-      document.querySelector("#department .react-select__single-value").innerText = "";
+      document.querySelector("#state .react-select__single-value").innerText = { placeholder };
+      document.querySelector("#department .react-select__single-value").innerText = { placeholder };
       // remettre les champs myDatePicker à zéro
-      document.querySelector("#date-of-birth .react-datepicker__input-container").value = "";
-      document.querySelector("#start-date .react-datepicker__input-container").value = "";
+      document.querySelector("#date-of-birth .react-datepicker__input-container").value = { placeholder };
+      document.querySelector("#start-date .react-datepicker__input-container").value = { placeholder };
     }
   };
 
@@ -45,21 +45,18 @@ const Formulary = () => {
   return (
     <form ref={formRef} className="container-form" onSubmit={(e) => handleSubmit(e)}>
       <h2 className="form-h2">Create Employee</h2>
-      <div className="form-group1-2">
-        <div className="form-group1">
+      <div className="form-group1-2-3">
+        <fieldset className="form-group1">
+          <legend>Employee Infos</legend>
           <label htmlFor="first-name">First Name</label>
           <input type="text" id="first-name" placeholder="First Name" />
           <label htmlFor="last-name">Last Name</label>
           <input type="text" id="last-name" placeholder="Last Name" />
           <label htmlFor="date-of-birth">
             Date of Birth
-            <MyDatePicker id="date-of-birth" placeholder="Birthdate" />
+            <MyDatePicker className="react-datepicker-ignore-onclickoutside" id="date-of-birth" placeholder="Birthdate" />
           </label>
-          <label htmlFor="start-date">
-            Start Date
-            <MyDatePicker id="start-date" placeholder="Start Date" />
-          </label>
-        </div>
+        </fieldset>
         <fieldset className="form-group2">
           <legend>Address</legend>
           <label htmlFor="street">Street</label>
@@ -74,9 +71,17 @@ const Formulary = () => {
           <label htmlFor="zip-code">Zip Code</label>
           <input type="text" id="zip-code" placeholder="Zip Code" />
         </fieldset>
+        <fieldset className="form-group3">
+          <legend>Employee Department Infos</legend>
+          <label htmlFor="department">Department</label>
+          <Select classNamePrefix="react-select" id="department" options={departments} placeholder="Department" />
+          <label htmlFor="start-date">
+            Start Date
+            <MyDatePicker id="start-date" placeholder="Start Date" />
+          </label>
+        </fieldset>
       </div>
-      <label htmlFor="department">Department</label>
-      <Select classNamePrefix="react-select" id="department" options={departments} placeholder="Department" />
+
       <button className="modal-btn">Save</button>
     </form>
   );
