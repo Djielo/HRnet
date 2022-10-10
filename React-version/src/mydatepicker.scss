@@ -1,9 +1,11 @@
+@import "./myselect.scss";
+
 // @import "variables.scss";
-$datepicker__background-color: #acc73a !default;
-$datepicker__border-color: #768e12 !default;
+$datepicker__background-color: $primary !default;
+$datepicker__border-color: $primary75 !default;
 $datepicker__highlighted-color: #3dcc4a !default;
-$datepicker__muted-color: #768e12 !default;
-$datepicker__selected-color: #768e12 !default;
+$datepicker__muted-color: $primary75 !default;
+$datepicker__selected-color: $primary75 !default;
 $datepicker__text-color: #000 !default;
 $datepicker__header-color: #000 !default;
 $datepicker__navigation-disabled-color: lighten(
@@ -377,12 +379,12 @@ $datepicker__navigation-disabled-color: lighten(
 
       input[type="time"]::-webkit-inner-spin-button,
       input[type="time"]::-webkit-outer-spin-button {
-        -webkit-appearance: none;
+        appearance: none;
         margin: 0;
       }
 
       input[type="time"] {
-        -moz-appearance: textfield;
+        appearance: textfield;
       }
     }
 

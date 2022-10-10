@@ -75,29 +75,32 @@ body {
     margin: 0.5rem 0 1rem 0;
   }
 
-  .form-group1-2 {
+  .form-group1-2-3 {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 
     .form-group1,
-    .form-group2 {
+    .form-group2,
+    .form-group3 {
       margin-top: 0.5rem;
       width: 100%;
       max-width: 20rem;
-    }
-
-    .form-group2 {
       border: #ccc solid 1px;
       border-radius: 5px;
     }
   }
 
+  #state {
+    width: 100%;
+    margin: 0.5rem 0;    
+    max-width: 20rem;
+  }
+
   #department {
     width: 100%;
-    max-width: 21.6rem;
-    padding: 12px;
+    max-width: 21.6rem;    
     margin: 0.5rem 0;
     box-sizing: border-box;
     border: 1px solid #ccc;
@@ -108,10 +111,6 @@ body {
     margin-top: 1rem;
     font-size: 1rem;
     font-weight: 600;
-  }
-
-  label:last-of-type {
-    width: 100%;
   }
 }
 
@@ -136,6 +135,27 @@ input {
     border: 1px solid #ccc;
     border-radius: 4px;
   }
+}
+
+// DATEPICKER
+
+.react-datepicker__header {
+  > div > button, > div > select {
+    background-color: $primary50;
+    color: $neutral0;
+    font-weight: 600;
+    border: none;
+    &:hover {
+      background-color: $primary10;
+      color: black;      
+    }
+    padding: 0.5rem;
+    margin: 0 0.2rem;
+    border-radius: 5px;
+  }
+  background-color: $primary;
+  color: $neutral0;
+  border-radius: 5px;
 }
 
 // MODAL
@@ -235,7 +255,7 @@ input {
   }
 
   .react-select__menu {
-    background-color: $primary25;
+    background-color: $primary10;
     border-radius: 5px;
   }
 }
