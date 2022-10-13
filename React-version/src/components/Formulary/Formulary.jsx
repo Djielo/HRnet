@@ -23,11 +23,12 @@ const Formulary = () => {
   const [startDate, setStartDate] = useState("");
   const formRef = useRef();
   const dispatch = useDispatch();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const message = defineMessage();
     infoNewEmployee(formRef.current, message, dispatch);
+    
     if (message.slice(0, 3) !== "you") {
       // remettre les champs à zéro
       formRef.current.reset();

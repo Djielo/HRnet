@@ -19,13 +19,18 @@ body {
 .title {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   text-align: center;
 
   .logo_wealth_health {
     width: 5rem;
     height: 100%;
-    margin: 2rem 1rem 0 0;
+    padding: 5px;
+    // margin: 2rem 1rem 0 0;
+  }
+
+  h1 {
+    margin: 0;
   }
 }
 
@@ -40,11 +45,11 @@ body {
 
 .link_employee_list_home,
 .modal-btn,
-.example-header-btn {
+.ex-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0.5rem;
+  margin: 1em;
   padding: 0.4rem;
   border-radius: 5px;
   text-decoration: none;
@@ -58,7 +63,7 @@ body {
   .viewEmployees_home {
     width: 1.5rem;
     height: 1.5rem;
-    padding: 0 0.5rem;
+    padding: 0 0.5rem 0 0;
   }
 }
 
@@ -311,19 +316,36 @@ td {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  > div {
-    margin: 0 16px;
-  }
-}
+  margin: 0.5rem 1rem 1rem 1rem;
 
-#page-size {
-  width: max-content;
-  max-width: 10rem;
-  padding: 5px;
-  margin: 0.5rem;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  .ex-page-size {
+    margin: 0;
+    width: 10rem;
+    .ex-page-size-title {
+      margin: 5px;
+    }
+    .ex-page-size-dropdown {
+      width: max-content;
+      padding: 5px;
+      margin: 0;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  }
+
+  .ex-btn {
+    margin: 0;
+  }
+
+  .ex-input_search {
+    width: 10rem;
+    padding: 0.4rem;
+    margin: 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
 }
 
 .ag-header-cell {
@@ -373,7 +395,7 @@ td {
 }
 
 .ag-paging-panel {
-  background-color: $primary;  
+  background-color: $primary;
   border-radius: 0 0 10px 10px;
 
   .ag-paging-row-summary-panel,

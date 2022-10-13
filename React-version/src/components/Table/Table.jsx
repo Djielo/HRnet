@@ -45,9 +45,9 @@ const Table = () => {
   return (
     <div style={containerStyle}>
       <div className="example-header">
-        <div>
-          <span>Page Size:</span>
-          <select defaultValue="---" onChange={onPageSizeChanged} id="page-size">
+        <div className="ex-page-size">
+          <span className="ex-page-size-title">Page Size:</span>
+          <select defaultValue="---" onChange={onPageSizeChanged} id="page-size" className="ex-page-size-dropdown">
             <option value="1000">---</option>
             <option value="5">5</option>
             <option value="10">10</option>
@@ -56,10 +56,10 @@ const Table = () => {
             <option value="100">100</option>
           </select>
         </div>
-        <input className="input_search" type="search" name="search" placeholder="search" onChange={handleChange} />
-        <button className="example-header-btn" onClick={() => dispatch(createEmployee(randomEmployee()))}>
+        <button className="ex-btn" onClick={() => dispatch(createEmployee(randomEmployee()))}>
           Create Employee
         </button>
+        <input className="ex-input_search" type="search" name="search" placeholder="search" onChange={handleChange} />
       </div>
       {/* On div wrapping Grid a) specify theme CSS Class Class and b) sets Grid size */}
       <div className="ag-theme-alpine" style={gridStyle}>
