@@ -1,10 +1,11 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { infoNewEmployee } from "../../Utils/infoNewEmployee";
 import { useDispatch } from "react-redux";
 import MyDatePicker from "../MyDatePicker/MyDatePicker";
 import Select from "react-select";
 import states from "../../Utils/states";
 import departments from "../../Utils/departments";
+import { setBirthDate, setStartDate } from "../../redux/features/employeeSlice";
 
 const placeholder = {
   firstName: "First Name",
@@ -18,9 +19,7 @@ const placeholder = {
   startDate: "Select a date",
 };
 
-const Formulary = () => {
-  const [birthDate, setBirthDate] = useState("");
-  const [startDate, setStartDate] = useState("");
+const Formulary = () => {  
   const formRef = useRef();
   const dispatch = useDispatch();
 
@@ -33,8 +32,8 @@ const Formulary = () => {
       // remettre les champs à zéro
       formRef.current.reset();
       // remettre les champs myDatePicker à zéro
-      setBirthDate("");
-      setStartDate("");
+      dispatch(setBirthDate(""));
+      dispatch(setStartDate(""));
       // remettre les champs Select à zéro
       document.querySelector("#state .react-select__single-value").innerText = placeholder.state;
       document.querySelector("#department .react-select__single-value").innerText = placeholder.department;
@@ -72,7 +71,7 @@ const Formulary = () => {
           <input type="text" id="last-name" placeholder={placeholder.lastName} />
           <label htmlFor="date-of-birth">
             Date of Birth
-            <MyDatePicker id="date-of-birth" placeholder={placeholder.birthDate} state={{ birthDate, setBirthDate }} />
+            <MyDatePicker id="date-of-birth" placeholder={placeholder.birthDate} />
           </label>
         </fieldset>
         <fieldset className="form-group2">
@@ -95,7 +94,7 @@ const Formulary = () => {
           <Select classNamePrefix="react-select" id="department" options={departments} placeholder={placeholder.department} />
           <label htmlFor="start-date">
             Start Date
-            <MyDatePicker id="start-date" placeholder={placeholder.startDate} state={{startDate, setStartDate}} />
+            <MyDatePicker id="start-date" placeholder={placeholder.startDate} />
           </label>
         </fieldset>
       </div>

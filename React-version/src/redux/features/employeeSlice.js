@@ -5,6 +5,8 @@ export const employeeSlice = createSlice({
   initialState: {
     list: [],
     filteredList: [],
+    birthDate: "",
+    startDate: "",
     ModalMessage: "",
   },
   reducers: {
@@ -19,10 +21,16 @@ export const employeeSlice = createSlice({
     filteredEmployee: (state, action) => {
       state.filteredList = action.payload;
     },
+    setBirthDate: (state, action) => {
+      state.birthDate = action.payload;
+    },
+    setStartDate: (state, action) => {
+      state.startDate = action.payload;
+    },
     setModalMessage: (state, action) => {
       state.ModalMessage = action.payload;
     },
   },
 });
 
-export const { updateEmployee, setModalMessage, createEmployee, filteredEmployee } = employeeSlice.actions;
+export const { updateEmployee, setModalMessage, createEmployee, setBirthDate, setStartDate, filteredEmployee } = employeeSlice.actions;

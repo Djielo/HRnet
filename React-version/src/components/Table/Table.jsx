@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useRef } from "react";
+import React, { useCallback, useMemo, useRef, useState } from "react";
 import { AgGridReact } from "ag-grid-react";
 import columnsEmployees from "../../Utils/columnsEmployees";
 import { createEmployee, filteredEmployee } from "../../redux/features/employeeSlice";
@@ -11,11 +11,13 @@ import { useDispatch, useSelector } from "react-redux";
 const Table = () => {
   const dispatch = useDispatch();
   const gridRef = useRef();
-  const containerStyle = useMemo(() => ({ width: "100%", height: "100%" }), []);
+  const [paginValue, setPaginValue] = useState("");
+  const containerStyle = useMemo(() => ({ width: "100%", minHeight: 176, height: 43 * paginValue + 96, maxHeight: 520 }), [paginValue]);
   const gridStyle = useMemo(() => ({ height: "100%", width: "100%" }), []);
   const data = useSelector((state) => state.employee.list);
 
   const paginationNumberFormatter = useCallback((params) => {
+    setPaginValue(params.value);
     return "[" + params.value.toLocaleString() + "]";
   }, []);
 
@@ -35,11 +37,22 @@ const Table = () => {
     };
   }, []);
 
-  const dataFiltered = useSelector(state => state.employee.filteredList)
+  const dataFiltered = useSelector((state) => state.employee.filteredList);
 
   const handleChange = (e) => {
     const searchValue = e.target.value;
-    searchValue === "" ? dispatch(filteredEmployee(data)) : dispatch(filteredEmployee(data.filter((employee) => employee["first-name"].includes(searchValue) || employee["last-name"].includes(searchValue) || employee.department.includes(searchValue))));
+    searchValue === ""
+      ? dispatch(filteredEmployee(data))
+      : dispatch(
+          filteredEmployee(
+            data.filter(
+              (employee) =>
+                employee["first-name"].includes(searchValue) ||
+                employee["last-name"].includes(searchValue) ||
+                employee.department.includes(searchValue)
+            )
+          )
+        );
   };
 
   return (
@@ -49,7 +62,6 @@ const Table = () => {
           <span className="ex-page-size-title">Page Size:</span>
           <select defaultValue="---" onChange={onPageSizeChanged} id="page-size" className="ex-page-size-dropdown">
             <option value="1000">---</option>
-            <option value="5">5</option>
             <option value="10">10</option>
             <option value="25">25</option>
             <option value="50">50</option>
