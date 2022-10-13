@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import DatePicker from "react-datepicker";
 
 const range = (start, end, step) => {
@@ -17,8 +17,8 @@ const getMonth = (date) => {
   return date.getMonth();
 };
 
-const MyDatePicker = ({ id, placeholder }) => {
-  const [startDate, setStartDate] = useState("");
+const MyDatePicker = ({ id, placeholder, state }) => {
+
   const years = range(1900, getYear(new Date()) + 1, 1);
   const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   return (
@@ -66,8 +66,8 @@ const MyDatePicker = ({ id, placeholder }) => {
           </button>
         </div>
       )}
-      selected={startDate}
-      onChange={(date) => setStartDate(date)}
+      selected={id === "start-date" ? state.startDate : state.birthDate}
+      onChange={(date) => id === "start-date" ? state.setStartDate(date) : state.setBirthDate(date)}
     />
   );
 };
