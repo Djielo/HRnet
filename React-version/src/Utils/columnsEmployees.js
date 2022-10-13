@@ -1,50 +1,30 @@
-const columnWidth = "max-content";
- 
- const columnsEmployees = [
+const columnsEmployees = [
   {
-    title: "Firstname",
-    dataIndex: "first-name",
-    width: columnWidth,
+    field: "first-name",
   },
   {
-    title: "Lastname",
-    dataIndex: "last-name",
-    width: columnWidth,
+    field: "last-name",
   },
   {
-    title: "Start Date",
-    dataIndex: "start-date",
-    width: columnWidth,
+    field: "date-of-birth",
   },
   {
-    title: "Department",
-    dataIndex: "department",
-    width: columnWidth,
+    field: "street",
   },
   {
-    title: "Date of Birth",
-    dataIndex: "date-of-birth",
-    width: columnWidth,
+    field: "city",
   },
   {
-    title: "Street",
-    dataIndex: "street",
-    width: columnWidth,
+    field: "state",
   },
   {
-    title: "City",
-    dataIndex: "city",
-    width: columnWidth,
+    field: "zip-code",
   },
   {
-    title: "State",
-    dataIndex: "state",
-    width: columnWidth,
+    field: "start-date",
   },
   {
-    title: "Zip Code",
-    dataIndex: "zip-code",
-    width: columnWidth,
+    field: "department",
   },
 ];
 

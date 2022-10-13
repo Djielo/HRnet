@@ -9,6 +9,9 @@ body {
   background-image: linear-gradient(-25deg, $primary75 0%, #ffffff 100%);
   background-attachment: fixed;
   background-repeat: no-repeat;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 // COMMUN
@@ -32,14 +35,16 @@ body {
   align-items: center;
   margin: 0 auto;
   width: 80vw;
+  height: 60vh;
 }
 
 .link_employee_list_home,
-.modal-btn {
+.modal-btn,
+.example-header-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 1rem;
+  margin: 0.5rem;
   padding: 0.4rem;
   border-radius: 5px;
   text-decoration: none;
@@ -48,6 +53,7 @@ body {
   transition: background-color 0.6s ease-in-out;
   &:hover {
     background-color: $primary75;
+    cursor: pointer;
   }
   .viewEmployees_home {
     width: 1.5rem;
@@ -94,13 +100,13 @@ body {
 
   #state {
     width: 100%;
-    margin: 0.5rem 0;    
+    margin: 0.5rem 0;
     max-width: 20rem;
   }
 
   #department {
     width: 100%;
-    max-width: 21.6rem;    
+    max-width: 21.6rem;
     margin: 0.5rem 0;
     box-sizing: border-box;
     border: 1px solid #ccc;
@@ -130,7 +136,7 @@ input {
   width: 98%;
   .input_search {
     max-width: 10rem;
-    padding: 12px;    
+    padding: 12px;
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -140,14 +146,15 @@ input {
 // DATEPICKER
 
 .react-datepicker__header {
-  > div > button, > div > select {
+  > div > button,
+  > div > select {
     background-color: $primary50;
     color: $neutral0;
     font-weight: 600;
     border: none;
     &:hover {
       background-color: $primary10;
-      color: black;      
+      color: black;
     }
     padding: 0.5rem;
     margin: 0 0.2rem;
@@ -262,6 +269,7 @@ input {
 
 // TABLE
 
+// RC-TABLE
 table {
   border: 1px solid $primary75;
   // border-collapse: collapse;
@@ -294,5 +302,85 @@ td {
         font-size: 1em;
       }
     }
+  }
+}
+
+// AG-GRID
+
+.example-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  > div {
+    margin: 0 16px;
+  }
+}
+
+#page-size {
+  width: max-content;
+  max-width: 10rem;
+  padding: 5px;
+  margin: 0.5rem;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.ag-header-cell {
+  background-color: $primary;
+  color: #f5f5f5;
+  font-weight: normal;
+  font-size: 1rem;
+  &:hover {
+    background-color: $primary75 !important;
+    color: black;
+  }
+}
+
+.ag-root-wrapper {
+  border-radius: 10px;
+}
+
+.ag-header {
+  border-radius: 10px 10px 0 0;
+  background-color: $primary;
+  color: #f5f5f5;
+  font-weight: normal;
+  width: 80%;
+}
+
+.ag-cell {
+  &:hover {
+    background-color: $primary;
+    color: $neutral0;
+  }
+}
+
+.ag-row-even {
+  background-color: $primary10 !important;
+}
+
+.ag-row-odd {
+  background-color: $primary25 !important;
+}
+
+.ag-row-even,
+.ag-row-odd {
+  &:hover {
+    background-color: $primary75 !important;
+    color: $neutral0;
+  }
+}
+
+.ag-paging-panel {
+  background-color: $primary;  
+  border-radius: 0 0 10px 10px;
+
+  .ag-paging-row-summary-panel,
+  .ag-paging-page-summary-panel {
+    background-color: $primary;
+    color: #f5f5f5;
+    font-weight: normal;
+    font-size: 1rem;
   }
 }

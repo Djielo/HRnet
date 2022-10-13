@@ -1,14 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import Table from "rc-table";
 import Wealth_Health_250 from "../assets/Wealth_Health_250.png";
-// import { mockedData } from "../mockedData";
 import home from "../assets/home.svg";
-import columnsEmployees from "../Utils/columnsEmployees";
+import Table from "../components/Table/Table";
 
 const Employee = () => {
-  const data = useSelector((state) => state.employee.list);
 
   return (
     <>
@@ -21,7 +17,7 @@ const Employee = () => {
           <img src={home} className="viewEmployees_home" alt="home" />
           Home
         </Link>
-        <Table columns={columnsEmployees} data={data} />
+        <Table />        
       </div>
     </>
   );
