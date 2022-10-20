@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import DatePicker from "react-datepicker";
+import { useDispatch, useSelector } from "react-redux";
+import { setBirthDate, setStartDate } from "../../redux/features/employeeSlice";
 
 const MyDatePicker = ({id, placeholder}) => {
-  const [startDate, setStartDate] = useState("");
+  const dispatch = useDispatch();
+  const selectBirthdate = useSelector((state) => state.employee.birthDate);
+  const selectStartdate = useSelector((state) => state.employee.startDate);
 
   return (
     <DatePicker
       id={id}
       placeholderText={placeholder}
-      selected={startDate}
-      onChange={(date) => setStartDate(date)}
+      selected={id === "date-of-birth" ? selectBirthdate : selectStartdate}
+      onChange={(date) => dispatch(id === "date-of-birth" ? setBirthDate(date.getTime()) : setStartDate(date.getTime()))}
       showYearDropdown
       dateFormatCalendar="MMMM"
       yearDropdownItemNumber={100}
