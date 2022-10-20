@@ -19,15 +19,16 @@ const placeholder = {
   startDate: "Select a date",
 };
 
-const Formulary = () => {  
+const Formulary = () => {
   const formRef = useRef();
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const message = defineMessage();
+    const modal = document.querySelector(".modalContainer");
     infoNewEmployee(formRef.current, message, dispatch);
-    
+
     if (message.slice(0, 3) !== "you") {
       // remettre les champs à zéro
       formRef.current.reset();
@@ -37,7 +38,9 @@ const Formulary = () => {
       // remettre les champs Select à zéro
       document.querySelector("#state .react-select__single-value").innerText = placeholder.state;
       document.querySelector("#department .react-select__single-value").innerText = placeholder.department;
-
+    }
+    if (modal) {
+      modal.style.display = "block";
     }
   };
 
@@ -47,9 +50,9 @@ const Formulary = () => {
     if (isFilled(formRef.current[3].value)) return "you must select your Date of Birth";
     if (isFilled(formRef.current[5].value)) return "you must fill your Street Address";
     if (isFilled(formRef.current[6].value)) return "you must fill your City";
-    if (isFilled(document.querySelector("#state .react-select__single-value").innerText)) return "you must select your State";
+    if (isFilled(document.querySelector("#state .react-select__single-value")?.innerText)) return "you must select your State";
     if (isFilled(formRef.current[8].value)) return "you must fill your Zip Code";
-    if (isFilled(document.querySelector("#department .react-select__single-value").innerText))
+    if (isFilled(document.querySelector("#department .react-select__single-value")?.innerText))
       return "you must select your working department";
     if (isFilled(formRef.current[11].value)) return "you must select the date you be employed";
     return `Welcome ${formRef.current[1].value}, you are registred as new employee :)`;
