@@ -4,6 +4,7 @@ import Formulary from "../components/Formulary/Formulary";
 import Wealth_Health_250 from "../assets/Wealth_Health_250.png";
 import ModalEmployeeCreated from "../components/ModalEmployeeCreated/ModalEmployeeCreated";
 import { useSelector } from "react-redux";
+import viewEmployees from "../assets/viewEmployees.svg";
 
 const Home = () => {
   const message = useSelector((state) => state.employee.ModalMessage);
@@ -16,7 +17,8 @@ const Home = () => {
       </div>
       <div className="container">
         <Link className="link_employee_list_home" to="/employee">
-          View Current Employees
+          <img src={viewEmployees} className="viewEmployees_home" alt="view_employees"/>
+          View Employees
         </Link>
         <Formulary />
       </div>
