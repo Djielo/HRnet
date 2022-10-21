@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Formulary from "../components/Formulary/Formulary";
 import Wealth_Health_250 from "../assets/Wealth_Health_250.png";
-import ModalEmployeeCreated from "../components/ModalEmployeeCreated/ModalEmployeeCreated";
+import ModalEmployeeCreated from "@jielo/modal_ocr14";
+import "@jielo/modal_ocr14/dist/cjs/index.css";
 import { useSelector } from "react-redux";
 import viewEmployees from "../assets/viewEmployees.svg";
 
@@ -17,12 +18,12 @@ const Home = () => {
       </div>
       <div className="container">
         <Link className="link_employee_list_home" to="/employee">
-          <img src={viewEmployees} className="viewEmployees_home" alt="view_employees"/>
+          <img src={viewEmployees} className="viewEmployees_home" alt="view_employees" />
           View Employees
         </Link>
         <Formulary />
       </div>
-      {message !== "" && <ModalEmployeeCreated />}
+      {message !== "" && <ModalEmployeeCreated message={message} image={Wealth_Health_250}/>}
     </>
   );
 };
