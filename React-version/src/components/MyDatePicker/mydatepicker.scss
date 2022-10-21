@@ -229,8 +229,8 @@ $datepicker__navigation-disabled-color: lighten(
 .react-datepicker__current-month,
 .react-datepicker-time__header,
 .react-datepicker-year-header {
-  margin-top: 0;
-  color: $datepicker__header-color;
+  margin: 0 0 0.2rem 0;
+  color: $neutral0;
   font-weight: bold;
   font-size: $datepicker__font-size * 1.18;
 }
@@ -344,7 +344,9 @@ $datepicker__navigation-disabled-color: lighten(
 }
 
 .react-datepicker__month {
-  margin: $datepicker__margin;
+  // margin: $datepicker__margin;
+  padding: $datepicker__margin;
+  background-color: $primary10;
   text-align: center;
 
   .react-datepicker__month-text,
@@ -501,8 +503,14 @@ $datepicker__navigation-disabled-color: lighten(
   line-height: $datepicker__item-size;
   text-align: center;
   margin: $datepicker__day-margin;
+  &:hover {
+    color: $neutral0;
+  }
 }
 
+.react-datepicker__day-name {
+  color: $neutral0
+}
 .react-datepicker__month,
 .react-datepicker__quarter {
   &--selected,
