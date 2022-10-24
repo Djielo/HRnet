@@ -29,20 +29,34 @@ const Formulary = () => {
     const modal = document.querySelector(".modalContainer");
     infoNewEmployee(formRef.current, message, dispatch);
 
+    /* Resetting the form. */
     if (message.slice(0, 3) !== "you") {
-      // remettre les champs à zéro
       formRef.current.reset();
-      // remettre les champs myDatePicker à zéro
       dispatch(setBirthDate(""));
       dispatch(setStartDate(""));
-      // remettre les champs Select à zéro
       document.querySelector("#state .react-select__single-value").innerText = placeholder.state;
       document.querySelector("#department .react-select__single-value").innerText = placeholder.department;
     }
+    /* Showing the modal. */
     if (modal) {
       modal.style.display = "block";
     }
   };
+
+  /**
+   * It's a React component that renders a form with a submit button. When the submit button is
+   * clicked, a message is displayed. The message depends on the values of the form fields.
+   * 
+   * The function isFilled returns true if the value of a form field is undefined or an empty string, otherwise it returns false.
+   * 
+   * The function defineMessage uses the function isFilled to determine if a form field is empty.
+   * It returns a message based on the values.
+   * 
+   * @returns {JSX.Element}
+   */
+  function isFilled(value) {
+    return value === undefined || value === "";
+  }
 
   function defineMessage() {
     if (isFilled(formRef.current[1].value)) return "you must fill your first name";
@@ -56,10 +70,6 @@ const Formulary = () => {
       return "you must select your working department";
     if (isFilled(formRef.current[11].value)) return "you must select the date you be employed";
     return `Welcome ${formRef.current[1].value}, you are registred as new employee :)`;
-  }
-
-  function isFilled(value) {
-    return value === undefined || value === "";
   }
 
   return (
