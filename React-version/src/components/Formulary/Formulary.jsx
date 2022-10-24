@@ -19,6 +19,11 @@ const placeholder = {
   startDate: "Select a date",
 };
 
+/**
+ * A React component that is a form for adding a new employee. It is a functional component.
+ * 
+ * @returns {JSX.Element} 
+ */
 const Formulary = () => {
   const formRef = useRef();
   const dispatch = useDispatch();
