@@ -345,6 +345,10 @@ const city = [
   "Youngstown",
 ];
 
+/**
+ * Allows you to create a random employee to fill the table faster.
+ * @returns an object that will be pushed into the "list" and "filteredList" array
+ */
 export const randomEmployee = () => {
   return {
     "first-name": firstName[Math.floor(Math.random() * (firstName.length - 0) + 0)],
