@@ -31,9 +31,8 @@ const Formulary = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const message = defineMessage();
-    const modal = document.querySelector(".modalContainer");
     infoNewEmployee(formRef.current, message, dispatch);
-
+    
     /* Resetting the form. */
     if (message.slice(0, 3) !== "you") {
       formRef.current.reset();
@@ -41,10 +40,6 @@ const Formulary = () => {
       dispatch(setStartDate(""));
       document.querySelector("#state .react-select__single-value").innerText = placeholder.state;
       document.querySelector("#department .react-select__single-value").innerText = placeholder.department;
-    }
-    /* Showing the modal. */
-    if (modal) {
-      modal.style.display = "block";
     }
   };
 
@@ -74,7 +69,7 @@ const Formulary = () => {
     if (isFilled(document.querySelector("#department .react-select__single-value")?.innerText))
       return "you must select your working department";
     if (isFilled(formRef.current[11].value)) return "you must select the date you be employed";
-    return `Welcome ${formRef.current[1].value}, you are registred as new employee :)`;
+    return `👋 Welcome ${formRef.current[1].value}, you are registred as new employee 👋`;
   }
 
   return (

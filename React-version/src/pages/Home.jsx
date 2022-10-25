@@ -4,11 +4,16 @@ import Formulary from "../components/Formulary/Formulary";
 import Wealth_Health_250 from "../assets/Wealth_Health_250.png";
 import ModalEmployeeCreated from "@jielo/modal_ocr14";
 import "@jielo/modal_ocr14/dist/cjs/index.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import viewEmployees from "../assets/viewEmployees.svg";
+import { setModalMessage } from "../redux/features/employeeSlice";
 
 const Home = () => {
   const message = useSelector((state) => state.employee.ModalMessage);
+  const dispatch = useDispatch();
+  function removeModal() {
+    dispatch(setModalMessage(""));
+  }
 
   return (
     <>
@@ -23,7 +28,7 @@ const Home = () => {
         </Link>
         <Formulary />
       </div>
-      {message !== "" && <ModalEmployeeCreated message={message} image={Wealth_Health_250}/>}
+      {message !== "" && <ModalEmployeeCreated message={message} image={Wealth_Health_250} closeFunction={removeModal} />}
     </>
   );
 };
