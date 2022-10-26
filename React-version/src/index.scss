@@ -146,7 +146,6 @@ input {
     border-radius: 4px;
   }
 }
-
 // DATEPICKER
 
 .react-datepicker__header {
@@ -272,42 +271,6 @@ input {
 }
 
 // TABLE
-
-// RC-TABLE
-table {
-  border: 1px solid $primary75;
-  // border-collapse: collapse;
-  width: 100%;
-}
-
-th,
-td {
-  text-align: -internal-center;
-  padding: 10px;
-}
-
-td {
-  border: 1px solid $primary75;
-  text-align: center;
-}
-
-.rc-table {
-  .rc-table-thead {
-    .rc-table-cell {
-      font-weight: normal;
-      background-color: $primary75;
-      color: #f5f5f5;
-    }
-  }
-
-  .rc-table-tbody {
-    .rc-table-row {
-      .rc-table-cell {
-        font-size: 1em;
-      }
-    }
-  }
-}
 
 // AG-GRID
 
