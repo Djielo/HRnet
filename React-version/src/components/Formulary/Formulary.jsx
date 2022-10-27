@@ -93,9 +93,9 @@ const Formulary = () => {
           <input type="text" id="street" placeholder={placeholder.street} />
           <label htmlFor="city">City</label>
           <input type="text" id="city" placeholder={placeholder.city} />
-          <label htmlFor="state">
+          <label htmlFor="state" id="aria-label-state" >
             State
-            <Select classNamePrefix="react-select" id="state" options={states} placeholder={placeholder.state} />
+            <Select classNamePrefix="react-select" id="state" aria-labelledby="aria-label-state" options={states} placeholder={placeholder.state} />
           </label>
 
           <label htmlFor="zip-code">Zip Code</label>
@@ -103,8 +103,8 @@ const Formulary = () => {
         </fieldset>
         <fieldset className="form-group3">
           <legend>Employee Department Infos</legend>
-          <label htmlFor="department">Department</label>
-          <Select classNamePrefix="react-select" id="department" options={departments} placeholder={placeholder.department} />
+          <label htmlFor="department" id="aria-label-department" >Department</label>
+          <Select classNamePrefix="react-select" id="department" aria-labelledby="aria-label-department" options={departments} placeholder={placeholder.department} />
           <label htmlFor="start-date">
             Start Date
             <MyDatePicker id="start-date" placeholder={placeholder.startDate} />
