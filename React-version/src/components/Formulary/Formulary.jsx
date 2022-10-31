@@ -47,13 +47,14 @@ const Formulary = () => {
    * It's a React component that renders a form with a submit button. When the submit button is
    * clicked, a message is displayed. The message depends on the values of the form fields.
    * 
-   * The function isFilled returns true if the value of a form field is undefined or an empty string, otherwise it returns false.
+   * The function isFilled returns true if the value of a form field is undefined or an empty string.
+   * Otherwise it returns false.
    * 
    * The function defineMessage uses the function isFilled to determine if a form field is empty.
    * It returns a message based on the values.
    * 
    * @returns {JSX.Element}
-   */
+   */   
   function isFilled(value) {
     return value === undefined || value === "";
   }

@@ -11,7 +11,7 @@ export const employeeSlice = createSlice({
   },
   reducers: {
     updateEmployee: (state, action) => {
-      state.list.push({ ...action.payload, key: new Date().getTime() });
+      state.list.push({ ...action.payload, key: new Date().getTime() }); // The key is used to identify each employee in the list.
       state.filteredList.push({ ...action.payload, key: new Date().getTime() });
     },
     createEmployee: (state, action) => {
