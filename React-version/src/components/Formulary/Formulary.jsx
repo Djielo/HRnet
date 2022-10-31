@@ -20,7 +20,7 @@ const placeholder = {
 };
 
 /**
- * A React component that is a form for adding a new employee. It is a functional component.
+ * A React component that is a form for adding a new employee.
  * 
  * @returns {JSX.Element} 
  */
