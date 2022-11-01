@@ -81,8 +81,10 @@ const Table = () => {
 
   /* A callback function that is used to format the pagination number. */
   /* Each part of params traces each digit related to pagination! */
+  /* We use the last rendered value in this function. */
+  /* Enable the clg to see this value in the console  */
   const paginationNumberFormatter = useCallback((params) => {    
-    console.log(params.value);
+    // console.log(params.value);
     setPaginValue(params.value);
     return "[" + params.value.toLocaleString() + "]";
   }, []);

@@ -11,8 +11,12 @@ Install this project with npm
 Steps:
 ```bash
   clone it here: https://github.com/Djielo/HRnet
-  npm i
-  npm run
+  npm install
+  npm start
 ```
 Enjoy !!
+
+## Link to modal on npm
+
+https://www.npmjs.com/package/@jielo/modal_ocr14
     
