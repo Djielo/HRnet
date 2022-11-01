@@ -7,13 +7,11 @@
 
 ## Installation
 
-Install this project with npm
-Steps:
-```bash
-  clone it here: https://github.com/Djielo/HRnet
-  npm install
-  npm start
-```
+Steps to install this project with npm:
+- clone it here: https://github.com/Djielo/HRnet
+- npm install
+- npm start
+
 Enjoy !!
 
 ## Link to modal on npm
