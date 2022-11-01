@@ -19,4 +19,8 @@ Enjoy !!
 ## Link to modal on npm
 
 https://www.npmjs.com/package/@jielo/modal_ocr14
+
+## Link to modal on github
+
+https://github.com/Djielo/modal_14
     
